@@ -25,7 +25,6 @@ body > img {
 
 h1 {
     color:white;
-
     font-size: 42px;
 }
 
@@ -33,11 +32,20 @@ input {
     height: 5vh;
 }
 
-input:first-child {
-    width: 50vw;
+#middle-name input:first-child {
+    width: 30vw;
 }
 
-input:last-child {
+#middle-name input:last-child {
+    height: 5.5vh;
+    width: 10vw;
+}
+
+#todo-form input:first-child {
+    width: 30vw;
+}
+
+#todo-form input:last-child {
     height: 5.5vh;
     width: 10vw;
 }
@@ -49,6 +57,16 @@ input::placeholder {
 
 input[type="submit"] {
     color: tomato;
+}
+
+#middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top:25vh;
 }
 
 
@@ -95,4 +113,42 @@ input[type="submit"] {
 
 img {
     order: 99;
+}
+
+#todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+    background-color: rgba(255,255,255,0.5);
+
+    position: absolute;
+    top: 20vh;
+
+    width: 40.5vw;
+    height: 30vh;
+
+    /* 오른쪽에 스크롤바 공간을 미리 확보 */
+    padding: 16px;
+    padding-right: 40px; /* ← 스크롤바를 안쪽으로 밀어넣는 핵심 */
+    box-sizing: border-box;
+
+    /* border: 1px solid white; */
+
+    overflow: auto;
+}
+
+/* WebKit 스크롤바 */
+#todo-list::-webkit-scrollbar {
+    width: 12px; /* 실제 바 두께 */
+}
+
+#todo-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 6px;
 }
